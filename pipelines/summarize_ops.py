@@ -1,5 +1,5 @@
 import pandas as pd
-from pipelines.validate import moisture_schema
+from pipelines.validate import moisture_schema, production_schema
 
 def summarize_moisture():
     df = pd.read_csv("data/moisture_log.csv", parse_dates=["timestamp"])

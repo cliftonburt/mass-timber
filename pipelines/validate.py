@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import pandera as pa
 from pandera import Column, DataFrameSchema
 

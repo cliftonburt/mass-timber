@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import click
 from pipelines.simulate_moisture import simulate_moisture
 from pipelines.summarize_ops import summarize_moisture
@@ -15,10 +18,6 @@ def simulate_moisture_data(count):
 def summarize():
     summarize_moisture()
 
-if __name__ == "__main__":
-    cli()
-
-
 @cli.command()
 @click.option('--count', default=10, help='Number of production records to generate.')
 def simulate_production_data(count):
@@ -29,3 +28,6 @@ def simulate_production_data(count):
 def summarize_production_data():
     from pipelines.summarize_ops import summarize_production
     summarize_production()
+
+if __name__ == "__main__":
+    cli()
